@@ -35,6 +35,7 @@ app.post("/", (req, res) => {
         }
     ];
     house.create(newHouse);
+    res.redirect("/");
     });
 app.get('/api', (req, res) => {
     house.find({}, function(err, result) {
