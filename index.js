@@ -34,9 +34,6 @@ app.post('/add', (req, res) => {
     }, function() {
         res.redirect('/'); 
     })});
-app.get('/add', (req, res) => {
-    res.redirect('/'); 
-});
 app.get('/api', (req, res) => {
     house.find({}, function(err, result) {
         if(!err) {
