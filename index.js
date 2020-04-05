@@ -27,12 +27,15 @@ app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/admin.html');
 })
 app.post('/add', (req, res) => {
-    house.create({
+    var newHouse = [
+        {
         address: req.body.address,
         description: req.body.description,
         price: req.body.price
-    });
-    res.redirect('/'); 
+        }
+    ];
+    house.create(newHouse);
+    res.redirect('/');
     });
 app.get('/api', (req, res) => {
     house.find({}, function(err, result) {
