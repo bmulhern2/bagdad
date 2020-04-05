@@ -26,10 +26,7 @@ app.get('/', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/admin.html');
 })
-app.get('/add', (req, res) => {
-    res.redirect('/');
-});
-app.post('/add', (req, res) => {
+app.post("/", (req, res) => {
     var newHouse = [
         {
         address: req.body.address,
