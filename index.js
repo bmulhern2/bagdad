@@ -31,23 +31,11 @@ app.post('/add', (req, res) => {
         address: req.body.address,
         description: req.body.description,
         price: req.body.price
-    }, function(err) {
-        if (err) {
-            res.send(err);
-        } else {
-            res.redirect('/');
-        }
-    })
+    })});
+app.get('/add', (req, res) => {
+    res.redirect('/'); 
 });
-app.get('/api', (req, res) => {
-    house.find({}, (err, houses) => {
-        if (err) {
-            console.log(err);
-        } else {
-            res.json(houses);
-        }
-    });
-});
+
 app.listen('2020', function() {
     console.log("Application started on Port 2020");
 });
