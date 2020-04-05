@@ -26,6 +26,9 @@ app.get('/', (req, res) => {
 app.get('/admin', (req, res) => {
     res.sendFile(__dirname + '/admin.html');
 })
+app.get('/add', (req, res) => {
+    res.redirect('/');
+});
 app.post('/add', (req, res) => {
     var newHouse = [
         {
@@ -35,7 +38,6 @@ app.post('/add', (req, res) => {
         }
     ];
     house.create(newHouse);
-    res.redirect('/');
     });
 app.get('/api', (req, res) => {
     house.find({}, function(err, result) {
