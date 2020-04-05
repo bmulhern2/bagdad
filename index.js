@@ -31,9 +31,9 @@ app.post('/add', (req, res) => {
         address: req.body.address,
         description: req.body.description,
         price: req.body.price
-    }, function() {
-        res.redirect('/'); 
-    })});
+    });
+    res.redirect('/'); 
+    });
 app.get('/api', (req, res) => {
     house.find({}, function(err, result) {
         if(!err) {
